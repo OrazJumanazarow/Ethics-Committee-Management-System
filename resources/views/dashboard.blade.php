@@ -171,7 +171,7 @@
 
     .sidebar,
     .sidebar .card {
-        background-color: #FFC107;
+        background-color: #fff;
         height: 100%;
     }
 

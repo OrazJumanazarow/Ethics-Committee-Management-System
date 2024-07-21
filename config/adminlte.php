@@ -318,12 +318,12 @@ return [
             'submenu' => [
                     [
                     'text'=>'APPLICATION FORM',
-                    'url'=>'app_form',
+                    'url'=>'application_form/create',
                     'icon'=>'fas fa-fw fa-file'
                     ],
                     [
                     'text'=>'INFORMED CONSENT FORM',
-                    'url'=>'inf_con_form',
+                    'url'=>'informed_form/create',
                     'icon'=>'fas fa-fw fa-file'
                     ],
                     [
