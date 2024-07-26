@@ -7,5 +7,5 @@
 @stop
 
 @section('content')
-<h1>informed consent form</h1>
+<h1>project information form</h1>
 @stop

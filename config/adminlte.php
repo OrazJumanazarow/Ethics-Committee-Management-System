@@ -328,12 +328,12 @@ return [
                     ],
                     [
                     'text'=>'PROJECT INFORMATION FORM',
-                    'url'=>'pr_inf_form',
+                    'url'=>'project_information_form/create',
                     'icon'=>'fas fa-fw fa-file'
                     ],
                     [
                     'text'=>'APPLICATION CHECKLIST',
-                    'url'=>'app_check_form',
+                    'url'=>'application_cheklist_form/create',
                     'icon'=>'fas fa-fw fa-file'
                     ],
             ]

@@ -5,6 +5,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\PermissionsController;
 use App\Http\Controllers\Forms\InformedConsntFormController;
+use App\Http\Controllers\Forms\ProjectInformationController;
+use App\Http\Controllers\Forms\ApplicationChecklistController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -21,3 +23,8 @@ Route::group(['/prefix'=>'users','as'=>'users.'],function(){
 Route::get('application_form/create', [AplicationFormController::class,'create']);
 
 Route::get('informed_form/create',[InformedConsntFormController::class, 'create']);
+
+Route::get('project_information_form/create',[ProjectInformationController::class, 'create']);
+
+Route::get('application_cheklist_form/create',[ApplicationChecklistController::class, 'create']);
+
