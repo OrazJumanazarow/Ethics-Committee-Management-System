@@ -22,9 +22,14 @@ Route::group(['/prefix'=>'users','as'=>'users.'],function(){
 
 Route::get('application_form/create', [AplicationFormController::class,'create']);
 
+Route::post('application_form/store', [AplicationFormController::class,'store'])->name('application_form_store');
+
+Route::get('application_form/test',[AplicationFormController::class,'test']);
+
 Route::get('informed_form/create',[InformedConsntFormController::class, 'create']);
 
 Route::get('project_information_form/create',[ProjectInformationController::class, 'create']);
 
 Route::get('application_cheklist_form/create',[ApplicationChecklistController::class, 'create']);
+
 

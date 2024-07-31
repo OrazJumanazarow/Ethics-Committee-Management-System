@@ -3,18 +3,18 @@
 @section('title', 'Dashboard')
 
 @section('content_header')
-    
+<h1> INFORMED CONSENT FORM</h1>
 @stop
 
 @section('content')
-<section class="content">
+<section class="content ml-4">
     <div class="container-fluid">
         <form wire:submit='createConsentForm' id="main" action="">
             <div class="main">
                 <div class="d-flex justify-content-center">
                     <img style="width: 15%" src="img\logo6.png" alt="">
                 </div>
-                <h3>ETHICS COMMITTEE INFORMED CONSENT FORM</h3>
+
 
                 <div class="d-flex flex-wrap align-items-center">
                     <p class="form-label warnings">Please select your Ethics Committee Application Form that you

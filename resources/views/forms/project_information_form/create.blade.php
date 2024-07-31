@@ -3,7 +3,7 @@
 @section('title', 'Dashboard')
 
 @section('content_header')
-    <h1>APPLICATION FORMS</h1>
+    <h1>ETHICS COMMITTEE PROJECT INFORMATION FORM </h1>
 @stop
 
 @section('content')
@@ -13,7 +13,7 @@
             <div class="d-flex justify-content-center">
                 <img style="width: 15%" src="img\logo6.png" alt="">
             </div>
-            <h3>ETHICS COMMITTEE PROJECT INFORMATION FORM </h3>
+
             <form wire:submit='createForm2'>
                 <div class="mb-3 row" id="section-2">
                     <label class="form-label"> Type Of Study</label>

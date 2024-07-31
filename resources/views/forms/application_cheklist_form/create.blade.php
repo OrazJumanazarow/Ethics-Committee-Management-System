@@ -3,7 +3,7 @@
 @section('title', 'Dashboard')
 
 @section('content_header')
-
+<h1>ETHICS COMMITTEE RESEARCH & PROJECT APPLICATION CHECKLIST</h1>
 @stop
 
 @section('content')
@@ -11,11 +11,11 @@
     <div class="container-fluid">
         <form wire:submit='checkValidation'>
 
-            <div class="main">
+            <br> <br>
                 <div class="d-flex justify-content-center">
                     <img style="width: 15%" src="img\logo6.png" alt="">
                 </div>
-                <h3>ETHICS COMMITTEE RESEARCH & PROJECT APPLICATION CHECKLIST</h3>
+
                 <h4 class="form-description">Researchers applying to the Final International University (FIU) Ethics
                     Committee to
                     conduct a research
@@ -24,6 +24,8 @@
                     Checklist. Please review the Application Checklist below. Fill this form and attach it to the
                     beginning
                     of your application list</h4>
+
+                    <br> <br>
 
                 <div class="row d-flex justify-content-start align-items-center">
                     <div class="col col-sm-3">
@@ -49,8 +51,10 @@
 
                 </div>
 
-                <div class="row">
+                <br> <br>
+
                     <label class="form-label">Parent/Guardian Consent Form</label>
+                     <div class="row">
                     <div class="col-6 col-sm-3">
                         <div class="form-check">
                             <input wire:model.live='attach_parental' class="form-check-input" value="Yes"
@@ -74,8 +78,9 @@
                 <!--[if BLOCK]><![endif]--> <!--[if ENDBLOCK]><![endif]-->
 
 
-                <div class="row">
+                <br> <br>
                     <label class="form-label">Debriefing Form</label>
+                    <div class="row">
                     <div class="col-6 col-sm-3">
                         <div class="form-check">
                             <input wire:model.live='debriefing' wire:click='showDebriefing' class="form-check-input"
@@ -100,8 +105,10 @@
 
                 <!--[if BLOCK]><![endif]--> <!--[if ENDBLOCK]><![endif]-->
 
-                <div class="row">
+
+                <br> <br>
                     <label class="form-label">Tools</label>
+                    <div class="row">
                     <div class="col-6 col-sm-3">
                         <div class="form-check">
                             <input wire:model.live='tools' class="form-check-input" value="Yes" type="radio">
@@ -123,8 +130,10 @@
                 <!--[if BLOCK]><![endif]--> <!--[if ENDBLOCK]><![endif]-->
                 <!--[if BLOCK]><![endif]--> <!--[if ENDBLOCK]><![endif]-->
 
-                <div class="row">
+
+                <br> <br>
                     <label class="form-label">Permission</label>
+                    <div class="row">
                     <div class="col-6 col-sm-3">
                         <div class="form-check">
                             <input wire:model.live='permission' class="form-check-input" value="Yes"
@@ -148,8 +157,10 @@
                 <!--[if BLOCK]><![endif]--> <!--[if ENDBLOCK]><![endif]-->
                 <!--[if BLOCK]><![endif]--> <!--[if ENDBLOCK]><![endif]-->
 
-                <div class="row">
+
+                <br> <br>
                     <label class="form-label">Informed Consent Form</label>
+                   <div class="row">
                     <div class="col-6 col-sm-3">
                         <div class="form-check">
                             <input wire:model.live='attach_informedc' class="form-check-input" value="Yes"
@@ -173,6 +184,7 @@
                 <!--[if BLOCK]><![endif]--> <!--[if ENDBLOCK]><![endif]-->
                 <!-- Consent Form -->
 
+                <br> <br>
                 <div class="row">
 
                     <h4>POINTS TO BE CONSIDERED DURING ETHICAL ASSESSMENT</h4>
@@ -192,7 +204,7 @@
                         <label for="">N/A</label>
                     </div>
                 </div>
-                <div class="row">
+
 
                     <div class="row">
                         <div class="col-7">
@@ -222,9 +234,9 @@
 
 
                     <!--[if BLOCK]><![endif]--> <!--[if ENDBLOCK]><![endif]-->
-                </div>
 
-                <div class="row">
+                    <br> <br>
+
                     <div class="col-7">
                         <label class="form-label">2. Random assignment</label>
                     </div>
@@ -279,9 +291,9 @@
                         </div>
                         <!--[if BLOCK]><![endif]--> <!--[if ENDBLOCK]><![endif]-->
                     </div>
-                </div>
 
-                <div class="row">
+                    <br> <br>
+
                     <div class="col-7">
                         <label class="form-label">3. Does the informed consent form contain the following
                             items?</label>
@@ -553,9 +565,8 @@
 
                     </div>
                     <!--[if BLOCK]><![endif]--> <!--[if ENDBLOCK]><![endif]-->
-                </div>
 
-                <div class="row">
+                    <br> <br>
 
                     <div class="row">
                         <div class="col-7">
@@ -581,7 +592,8 @@
                         </div>
                     </div>
                     <!--[if BLOCK]><![endif]--> <!--[if ENDBLOCK]><![endif]-->
-                </div>
+
+                    <br> <br>
 
                 <div class="row">
 
@@ -614,7 +626,7 @@
                     <!--[if BLOCK]><![endif]--> <!--[if ENDBLOCK]><![endif]-->
                 </div>
 
-                <div class="row">
+                <br> <br>
 
                     <div class="row">
                         <div class="col-7">
@@ -642,7 +654,8 @@
                         </div>
                     </div>
                     <!--[if BLOCK]><![endif]--> <!--[if ENDBLOCK]><![endif]-->
-                </div>
+
+                    <br> <br>
 
                 <div class="row">
                     <div class="col-7">
@@ -674,6 +687,7 @@
 
                 <!--[if BLOCK]><![endif]--> <!--[if ENDBLOCK]><![endif]-->
 
+                <br> <br>
 
                 <div class="row">
                     <div class="col-7">
@@ -699,6 +713,8 @@
                     <!--[if BLOCK]><![endif]--> <!--[if ENDBLOCK]><![endif]-->
                 </div>
                 <!--[if BLOCK]><![endif]--> <!--[if ENDBLOCK]><![endif]-->
+
+                <br> <br>
 
                 <div class="row">
 
@@ -730,7 +746,7 @@
                     <!--[if BLOCK]><![endif]--> <!--[if ENDBLOCK]><![endif]-->
                 </div>
 
-                <div class="row">
+                <br> <br>
 
                     <div class="row">
                         <div class="col-7">
@@ -757,9 +773,8 @@
                         </div>
                     </div>
                     <!--[if BLOCK]><![endif]--> <!--[if ENDBLOCK]><![endif]-->
-                </div>
 
-                <div class="row">
+                    <br> <br>
 
                     <div class="row">
                         <div class="col-7">
@@ -782,7 +797,9 @@
                         </div>
                     </div>
                     <!--[if BLOCK]><![endif]--> <!--[if ENDBLOCK]><![endif]-->
-                </div>
+
+                    <br> <br> <br>
+
                 <div class="mb-3 row">
                     <div class="col-md">
                         <label class="form-label">Code:FRM-ETK-003</label>
