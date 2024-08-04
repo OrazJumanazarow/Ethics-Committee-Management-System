@@ -20,7 +20,7 @@
                     <p class="form-label warnings">Please select your Ethics Committee Application Form that you
                         want to attach before
                         filling out the Informed Consent Form.</p>
-                    <select style="width: 50%" wire:change="displayFormDatas" wire:model.live="attached_app_id"
+                    <select style="width: 50%"
                         class="form-select form-select-lg"- aria-label=".form-select-lg">
                         <option value="" hidden>Select a Form</option>
                         <!--[if BLOCK]><![endif]-->                                    <option value="128">
@@ -92,20 +92,20 @@
 
                 <div class="d-flex flex-wrap align-items-center">
                     <p class="form-label consent-text">This research project is being conducted by </p>
-                    <input wire:model='researcher_name' value="" class="form-control"
+                    <input name="researcher_name" value="" class="form-control"
                         type="text" readonly>
                 </div>
 
                 <div class="d-flex flex-wrap align-items-center">
                     <p class="form-label consent-text">of</p>
-                    <input wire:model='researcher_institution' value=""
+                    <input name="resarcher_institute" value=""
                         class="form-control" type="text" readonly>
                 </div>
 
                 <div class="d-flex flex-wrap align-items-center">
                     <p class="form-label consent-text">This research project aims
                         to investigate</p>
-                    <input wire:model='survey' class="form-control" type="text">
+                    <input name="aims_to_investigate" class="form-control" type="text">
                     <!--[if BLOCK]><![endif]--> <!--[if ENDBLOCK]><![endif]-->
                 </div>
 
@@ -114,7 +114,7 @@
                             style="font-style: italic; text-decoration:underline">18
                             years or older</span>
                         The proposed study is entitled</p>
-                    <input wire:model='researcher_title' value="" class="form-control"
+                    <input name="resarcher_advisor_title" value="" class="form-control"
                         type="text" readonly>
                 </div>
 
@@ -127,13 +127,13 @@
 
                 <div class="row consent-row justify-content-md-center">
                     <div class="col">
-                        <input wire:model='start_date' class="form-control" type="date">
+                        <input name='start_date' class="form-control" type="date">
                         <!--[if BLOCK]><![endif]--> <!--[if ENDBLOCK]><![endif]-->
                     </div>
 
                     <p class="col-md-auto form-label consent-text"> and</p>
                     <div class="col">
-                        <input wire:model='end_date' class=" col form-control" type="date">
+                        <input name='end_date' class=" col form-control" type="date">
                         <!--[if BLOCK]><![endif]--> <!--[if ENDBLOCK]><![endif]-->
                     </div>
 
@@ -143,7 +143,7 @@
                     <p class="form-label consent-text"> You are expected to participate in this survey study
                         only
                         once. The survey will be</p>
-                    <div class="col"> <select wire:model.live='type' style="width: 25%;"
+                    <div class="col"> <select name='type' style="width: 25%;"
                             class="form-select-lg" name="" id="">
                             <option hidden>Select</option>
                             <option value="Online">Online</option>
@@ -164,7 +164,7 @@
                         accept
                         and apply the basic principles</p>
 
-                    <textarea wire:model='question_1' style="margin: 5px 0" class="form-control" name="" id=""
+                    <textarea name="survey_is_anonyms" style="margin: 5px 0" class="form-control" name="" id=""
                         rows="3"></textarea>
 
                     <!--[if BLOCK]><![endif]--> <!--[if ENDBLOCK]><![endif]-->
@@ -174,13 +174,13 @@
                         to
                         your knowledge about
                     </p>
-                    <input wire:model='question_2' class="form-control" type="text">
+                    <input name="partification_explain" class="form-control" type="text">
                     <!--[if BLOCK]><![endif]--> <!--[if ENDBLOCK]><![endif]-->
                 </div>
 
                 <div class="d-flex flex-wrap align-items-center">
                     <p class="form-label consent-text"> and can support you in </p>
-                    <input wire:model='question_3' class="form-control" type="text">
+                    <input name="can_support_explain" class="form-control" type="text">
                     <!--[if BLOCK]><![endif]--> <!--[if ENDBLOCK]><![endif]-->
                 </div>
 
@@ -205,10 +205,10 @@
 
                 <div class="row consent-row justify-content-md-center">
 
-                    <input wire:model='researcher_email' value=""
+                    <input name="resarcher_email" value=""
                         class="col form-control" type="email" placeholder="email:" readonly>
                     <p class="col-md-auto form-label consent-text"></p>
-                    <input wire:model='researcher_phone' value=""
+                    <input name="resarcher_phone" value=""
                         class="col form-control" type="phone" placeholder="phone:" readonly>
 
                 </div>
@@ -269,5 +269,3 @@
 </div>
 </section>
 @stop
-
-
