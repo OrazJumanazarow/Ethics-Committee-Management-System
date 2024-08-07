@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Forms;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Models\ApplcationForm;
 
 class AplicationFormController extends Controller
 {
@@ -20,7 +21,8 @@ class AplicationFormController extends Controller
     }
 
     public function store(Request $request){
-        dd($request->all());
+        $form = new ApplcationForm();
+        $form->create($request->all());
     }
 
     public function test(){

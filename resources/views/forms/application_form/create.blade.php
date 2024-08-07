@@ -221,8 +221,8 @@
 
             <div class="col-12" style="margin: 10px">
                 <br>
-                <button name="organization_add" class="btn btn-light w-25" id="addParagraph2"
-                    onclick="addContaner2()">Add</button>
+                <a name="organization_add" class="btn btn-light w-25" id="addParagraph2"
+                    onclick="addContaner2()">Add</a>
             </div>
             <div id="inputContainer2" class="col-12">
 
@@ -331,32 +331,34 @@
         <!-- 10 -->
 
         <div class="form-label">10. Status of the application:</div>
-        <div class="mb-3 row" >
+        <div class="mb-3 row">
             <div class="form-check mr-4">
-                <input name="status_of_application_new_or_revised" class="form-check-input" value="New"
-                    type="radio">
+                <input id="statusOfApplicationNew" name="status_of_application_new_or_revised" class="form-check-input"
+                    value="New" type="radio">
                 <label class="form-label-small">New</label>
             </div>
             <div class="form-check mr-4">
-                <input name="status_of_application_new_or_revised" class="form-check-input" value="Revised"
-                    type="radio">
+                <input id="statusOfApplicationRevised" name="status_of_application_new_or_revised"
+                    class="form-check-input" value="Revised" type="radio">
                 <label class="form-label-small">Revised</label>
             </div>
 
 
             <div class="form-check mr-4">
                 <input name="status_of_application_new_or_revised" id="rpchanges" class="form-check-input"
-                    value="Reporting Changes" type="radio">
+                    value="ReportingChanges" type="radio">
                 <label class="form-label-small" for="flexCheckDefault6">Reporting Changes</label>
             </div>
             <div class="form-check">
                 <input name="status_of_application_new_or_revised" class="form-check-input"
-                    value="Extension of a Previous Study" type="radio">
+                    value="ExtensionOf_a_PreviousStudy" type="radio">
                 <label class="form-label-small">Extension of a Previous Study</label>
             </div>
         </div>
 
-        <div class="row" style="display: none">
+
+
+        <div id="statusOfApplicationNewOrRevised" class="row" style="display: none">
             <div class="mb-3">
                 <label class="form-label">11. Please explain the purpose of your study and the research question you are
                     trying
@@ -490,10 +492,10 @@
                 </div>
                 <div class="form-check">
                     <input name="status_of_application_new_or_revised_17" class="form-check-input" type="checkbox"
-                        id="other" value="other">
-                    <label class="form-check-label" for="other">Other (please specify):</label>
+                        id="other" value="other17">
+                    <label class="form-check-label" for="other">Other (please specify) 17:</label>
                     <input type="text" name="status_of_application_new_or_revised_17_other" class="form-control mt-2"
-                        id="otherText" placeholder="Please specify" style="display: none">
+                        id="otherText17" placeholder="Please specify" style="display: none">
                 </div>
             </div>
 
@@ -607,14 +609,29 @@
                         sound)</label>
                 </div>
                 <div class="form-check">
-                    <input name="status_of_application_new_or_revised_20_other" class="form-check-input" type="checkbox"
-                        id="otherMethod" value="otherMethod">
-                    <label class="form-check-label" for="otherMethod">Other (Please specify):</label>
-                    <input type="text" class="form-control mt-2" id="otherMethodText" placeholder="Please specify"
-                        style="display: none">
+                    <input name="status_of_application_new_or_revised_20" class="form-check-input" type="checkbox"
+                        id="otherMethod20" value="otherMethod20Value">
+                    <label class="form-check-label" for="otherMethod">Other (Please specify): </label>
+                    <input name="status_of_application_new_or_revised_20_other" type="text" class="form-control mt-2"
+                        id="otherMethodText" placeholder="Please specify" style="display: none">
                 </div>
             </div>
 
+            <script>
+                const otherMethodText = document.getElementById('otherMethodText');
+                document.querySelectorAll('input[name="status_of_application_new_or_revised_20"]').forEach((checkbox) => {
+                    checkbox.addEventListener('change', function() {
+
+                        console.log('20 metod',this.value,this.checked)
+                        if (this.value === 'otherMethod20Value' && this.checked)  {
+                            otherMethodText.style.display = 'block';
+                        } else {
+                            otherMethodText.style.display = 'none';
+                        }
+                    });
+                });
+
+            </script>
 
             <div class="mb-3">
                 <label class="form-label">21. Write down the possible contribution of this work to your field and/or
@@ -624,9 +641,88 @@
             </div>
         </div>
 
-        <script>
-            
-        </script>
+        <div class="col" id="reportingChanges" style="display: none">
+            <label class="form-label">Protocol No:</label>
+            <input name="status_of_application_reporting_changes" style="width: 50%" type="text" class="form-control"
+                placeholder="">
+
+            <!--[if BLOCK]><![endif]--> <!--[if ENDBLOCK]><![endif]-->
+
+
+            <label class="form-label">Please explain the changes you want to make (e.g., adding a
+                new researcher to
+                the
+                research team,
+                adding a
+                new measure, adding a new study similar to your approved study) in a simple language
+                so
+                that
+                people
+                with
+                no expertise in the field can understand (two paragraphs maximum). If, your
+                change(s)
+                will be
+                new
+                informed
+                consent form, debriefing form, etc., submit these forms together with the revised
+                application to
+                the
+                Ethics
+                Committee.</label>
+            <textarea name="status_of_application_reporting_changes" type="text" class="form-control" placeholder=""
+                rows="3"></textarea>
+            <!--[if BLOCK]><![endif]--> <!--[if ENDBLOCK]><![endif]-->
+
+            <label class="form-label">Is the reason for the proposed changes an unexpected
+                situation that happens to a
+                participant in the
+                study
+                (e.g., an event that could harm the participant's psychological or physical
+                health)?</label>
+
+            <div class="form-check">
+                <input name="status_of_application_reporting_changes" class="form-check-input" type="radio"
+                    value="no">
+                <label class="form-label-small">No</label>
+            </div>
+            <div class="form-check">
+                <input name="status_of_application_reporting_changes" class="form-check-input" type="radio"
+                    value="yes">
+                <label class="form-label-small">Yes</label>
+            </div>
+
+
+        </div>
+
+        <div class="mb-3 row" id="extensionOfAPreviousStudy" style="display: none">
+            <div class="col-6">
+                <label class="form-label">Protocol No (this is on your approval letter):</label>
+                <input style="width: 50%" type="text" class="form-control" placeholder="">
+                <!--[if BLOCK]><![endif]--> <!--[if ENDBLOCK]><![endif]-->
+            </div>
+
+            <div class="col-6">
+                <label class="form-label">The new expected date of completion:</label>
+                <input style="width: 50%" type="date" class="form-control" placeholder="">
+                <!--[if BLOCK]><![endif]--> <!--[if ENDBLOCK]><![endif]-->
+            </div>
+
+
+            <label class="form-label">If this is an extension of a previous project, does the current
+                study
+                show any differences from
+                the previously
+                approved one?</label>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" value="no">
+                <label class="form-label-small">No</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" value="yes">
+                <label class="form-label-small">Yes</label>
+            </div>
+
+        </div>
 
         <label class="form-label" for="">I confirm that the information I have given above is
             accurate
@@ -809,14 +905,62 @@
             });
         });
 
+        // form 17 other
+        const otherText17 = document.getElementById('otherText17');
+                document.querySelectorAll('input[name="status_of_application_new_or_revised_17"]').forEach((checkbox) => {
+                    checkbox.addEventListener('change', function() {
+                        console.log(this.checked)
+                        if (this.value === 'other17' && this.checked)  {
+                            otherText17.style.display = 'block';
+                        } else {
+                            otherText17.style.display = 'none';
+                        }
+                    });
+                });
+
         // form 20
-        const otherMethod = document.getElementById('otherMethod');
-        document.querySelectorAll('input[name="status_of_application_new_or_revised_20_other"]').forEach((checkbox) => {
-            checkbox.addEventListener('change', function() {
-                if (this.value === 'otherMethod') {
-                    otherMethod.style.display = 'block';
+
+
+        //form 10 new and revised
+        const statusOfApplicationNew = document.getElementById('statusOfApplicationNew');
+        const statusOfApplicationRevised = document.getElementById('statusOfApplicationRevised');
+
+        document.querySelectorAll('input[name="status_of_application_new_or_revised"]').forEach((radio) => {
+            radio.addEventListener('change', function() {
+                console.log(this.value)
+                if (this.value === 'New' || this.value === 'Revised') {
+                    statusOfApplicationNewOrRevised.style.display = 'block';
                 } else {
-                    otherMethod.style.display = 'none';
+                    statusOfApplicationNewOrRevised.style.display = 'none';
+                }
+            });
+        });
+
+        // form 10 Reporting Changes
+        const reportingChanges = document.getElementById('reportingChanges');
+
+        document.querySelectorAll('input[name="status_of_application_new_or_revised"]').forEach((radio) => {
+            radio.addEventListener('change', function() {
+                console.log(this.value)
+                if (this.value === 'ReportingChanges') {
+                    reportingChanges.style.display = 'block';
+                } else {
+                    reportingChanges.style.display = 'none';
+                }
+            });
+        });
+
+        // form 10 Extension of a Previous Study
+
+        const extensionOfAPreviousStudy = document.getElementById('extensionOfAPreviousStudy');
+
+        document.querySelectorAll('input[name="status_of_application_new_or_revised"]').forEach((radio) => {
+            radio.addEventListener('change', function() {
+                console.log(this.value)
+                if (this.value === 'ExtensionOf_a_PreviousStudy') {
+                    extensionOfAPreviousStudy.style.display = 'block';
+                } else {
+                    extensionOfAPreviousStudy.style.display = 'none';
                 }
             });
         });

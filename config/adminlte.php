@@ -172,8 +172,8 @@ return [
     */
 
     'classes_auth_card' => 'bg-gradient-dark',
-    'classes_auth_header' => 'bg-gradient-dark',
-    'classes_auth_body' => 'bg-gradient-dark',
+    'classes_auth_header' => 'bg-gradient-yellow',
+    'classes_auth_body' => 'bg-gradient-yellow',
     'classes_auth_footer' => 'text-center',
     'classes_auth_icon' => 'fa-fw text-light',
     'classes_auth_btn' => 'btn-flat btn-light',
