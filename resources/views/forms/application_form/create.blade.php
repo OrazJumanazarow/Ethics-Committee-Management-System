@@ -816,7 +816,7 @@
             console.log("-->>>", addContainer2Index);
             document.getElementById("inputContainer2").innerHTML += `<div class="row mb-2" id="deneme_${addContainer2Index}">
                          <div class="col">
-                           <input  type="text" class="form-control" placeholder="" required="">
+                           <input name=""  type="text" class="form-control" placeholder="" required="">
                         </div>
                         <div class="col">
                             <button class="btn btn-danger removeInput" onclick="removeContainer1('deneme_${addContainer2Index}')">Remove</button>

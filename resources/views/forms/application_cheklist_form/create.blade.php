@@ -9,7 +9,7 @@
 @section('content')
 <section class="container">
     <div class="container-fluid">
-        <form wire:submit='checkValidation'>
+        <form >
 
             <br> <br>
                 <div class="d-flex justify-content-center">
@@ -30,7 +30,7 @@
                 <div class="row d-flex justify-content-start align-items-center">
                     <div class="col col-sm-3">
                         <div class="form-check">
-                            <input wire:model.live='attach_form' class="form-check-input"
+                            <input name="research_or_project_application_form" class="form-check-input"
                                 value="Ethics Committee Application Form" type="radio">
                             <label class="form-label-small" for="form_list">
                                 Research Application Form
@@ -39,7 +39,7 @@
                     </div>
                     <div class="col col-sm-3">
                         <div class="form-check">
-                            <input wire:model.live='attach_form' class="form-check-input"
+                            <input name="research_or_project_application_form" class="form-check-input"
                                 value="Project Information Form" type="radio">
                             <label class="form-label-small" for="form_list">
                                 Project Application Form
@@ -57,7 +57,7 @@
                      <div class="row">
                     <div class="col-6 col-sm-3">
                         <div class="form-check">
-                            <input wire:model.live='attach_parental' class="form-check-input" value="Yes"
+                            <input name="parent_guardian" class="form-check-input" value="Yes"
                                 type="radio">
                             <label class="form-label-small">
                                 Yes
@@ -66,16 +66,22 @@
                     </div>
                     <div class="col-6 col-sm-3">
                         <div class="form-check">
-                            <input wire:model.live='attach_parental' class="form-check-input" value="No"
+                            <input name="parent_guardian" class="form-check-input" value="No"
                                 type="radio">
                             <label class="form-label-small">
                                 Not Needed
                             </label>
                         </div>
                     </div>
-                    <!--[if BLOCK]><![endif]--> <!--[if ENDBLOCK]><![endif]-->
                 </div>
-                <!--[if BLOCK]><![endif]--> <!--[if ENDBLOCK]><![endif]-->
+                <div style="margin-bottom: 10px">
+                    <a href="https://view.officeapps.live.com/op/view.aspx?src=https%3A%2F%2Fwww.final.edu.tr%2Fckfinder%2Fuserfiles%2Ffiles%2F05-HR_Parental_Approval_Form.doc&amp;wdOrigin=BROWSELINK">Parent/Guardian
+                        Consent Form</a>
+                </div>
+                <div>
+                    <input style="width: 50%" class="form-control" wire:model.live="file1" type="file" accept=".doc">
+                </div>
+
 
 
                 <br> <br>
@@ -83,7 +89,7 @@
                     <div class="row">
                     <div class="col-6 col-sm-3">
                         <div class="form-check">
-                            <input wire:model.live='debriefing' wire:click='showDebriefing' class="form-check-input"
+                            <input name="debriefing_form" class="form-check-input"
                                 value="Yes" type="radio">
                             <label class="form-label-small">
                                 Yes
@@ -92,18 +98,20 @@
                     </div>
                     <div class="col-6 col-sm-3">
                         <div class="form-check">
-                            <input wire:model.live='debriefing' wire:click='showDebriefing' class="form-check-input"
+                            <input name="debriefing_form" class="form-check-input"
                                 value="No" type="radio">
                             <label class="form-label-small">
                                 No
                             </label>
                         </div>
                     </div>
-                    <!--[if BLOCK]><![endif]--> <!--[if ENDBLOCK]><![endif]-->
-                </div>
-                <!--[if BLOCK]><![endif]--> <!--[if ENDBLOCK]><![endif]-->
 
-                <!--[if BLOCK]><![endif]--> <!--[if ENDBLOCK]><![endif]-->
+                </div>
+
+                <div>
+                    <input style="width: 50%" class="form-control" name="debriefing_form_yes_file" type="file" accept=".doc">
+                </div>
+                <textarea name="debriefing_form_no_explain" class="form-control" placeholder="Provide an explanation.." name="" id="" rows="3"></textarea>
 
 
                 <br> <br>
@@ -111,7 +119,7 @@
                     <div class="row">
                     <div class="col-6 col-sm-3">
                         <div class="form-check">
-                            <input wire:model.live='tools' class="form-check-input" value="Yes" type="radio">
+                            <input name='tools' class="form-check-input" value="Yes" type="radio">
                             <label class="form-label-small">
                                 Yes
                             </label>
@@ -119,7 +127,7 @@
                     </div>
                     <div class="col-6 col-sm-3">
                         <div class="form-check">
-                            <input wire:model.live='tools' class="form-check-input" value="No" type="radio">
+                            <input name="tools"  class="form-check-input" value="No" type="radio">
                             <label class="form-label-small">
                                 No
                             </label>
@@ -127,8 +135,11 @@
                     </div>
                     <!--[if BLOCK]><![endif]--> <!--[if ENDBLOCK]><![endif]-->
                 </div>
-                <!--[if BLOCK]><![endif]--> <!--[if ENDBLOCK]><![endif]-->
-                <!--[if BLOCK]><![endif]--> <!--[if ENDBLOCK]><![endif]-->
+                <div>
+                    <input style="width: 50%" class="form-control" name="tools_file" type="file" accept=".doc">
+                </div>
+                <textarea  class="form-control" placeholder="Provide an explanation.." name="tools_explain" id="" rows="3"></textarea>
+
 
 
                 <br> <br>
@@ -136,7 +147,7 @@
                     <div class="row">
                     <div class="col-6 col-sm-3">
                         <div class="form-check">
-                            <input wire:model.live='permission' class="form-check-input" value="Yes"
+                            <input name='permission' class="form-check-input" value="Yes"
                                 type="radio">
                             <label class="form-label-small">
                                 Yes
@@ -145,17 +156,19 @@
                     </div>
                     <div class="col-6 col-sm-3">
                         <div class="form-check">
-                            <input wire:model.live='permission' class="form-check-input" value="No"
+                            <input name='permission' class="form-check-input" value="No"
                                 type="radio">
                             <label class="form-label-small">
                                 No
                             </label>
                         </div>
                     </div>
-                    <!--[if BLOCK]><![endif]--> <!--[if ENDBLOCK]><![endif]-->
+
                 </div>
-                <!--[if BLOCK]><![endif]--> <!--[if ENDBLOCK]><![endif]-->
-                <!--[if BLOCK]><![endif]--> <!--[if ENDBLOCK]><![endif]-->
+                <div>
+                    <input style="width: 50%" class="form-control" name="permission_file" type="file" accept=".doc">
+                </div>
+                <textarea  class="form-control" placeholder="Provide an explanation.." name="permission_explain" id="" rows="3"></textarea>
 
 
                 <br> <br>
@@ -163,7 +176,7 @@
                    <div class="row">
                     <div class="col-6 col-sm-3">
                         <div class="form-check">
-                            <input wire:model.live='attach_informedc' class="form-check-input" value="Yes"
+                            <input name="informed_consent" class="form-check-input" value="Yes"
                                 type="radio">
                             <label class="form-label-small">
                                 Yes
@@ -172,17 +185,18 @@
                     </div>
                     <div class="col-6 col-sm-3">
                         <div class="form-check">
-                            <input wire:model.live='attach_informedc' class="form-check-input" value="No"
+                            <input name="informed_consent" class="form-check-input" value="No"
                                 type="radio">
                             <label class="form-label-small">
                                 Not Needed
                             </label>
                         </div>
                     </div>
-                    <!--[if BLOCK]><![endif]--> <!--[if ENDBLOCK]><![endif]-->
+
                 </div>
-                <!--[if BLOCK]><![endif]--> <!--[if ENDBLOCK]><![endif]-->
-                <!-- Consent Form -->
+                <div>
+                    <input style="width: 50%" class="form-control" name="informed_consent_file" type="file" accept=".doc">
+                </div>
 
                 <br> <br>
                 <div class="row">
@@ -217,23 +231,20 @@
                         </div>
                         <div class="col-3 d-flex justify-content-between align-items-center">
                             <div class="form-check">
-                                <input wire:model.live='question_1' class="form-check-input" value="Yes"
+                                <input name="points_assessment_1" class="form-check-input" value="Yes"
                                     type="radio">
                             </div>
                             <div class="form-check">
-                                <input wire:model.live='question_1' class="form-check-input" value="No"
+                                <input name="points_assessment_1" class="form-check-input" value="No"
                                     type="radio">
                             </div>
                             <div class="form-check">
-                                <input wire:model.live='question_1' class="form-check-input" value="N/A"
+                                <input name="points_assessment_1" class="form-check-input" value="N/A"
                                     type="radio">
                             </div>
                         </div>
                     </div>
-                    <!--[if BLOCK]><![endif]--> <!--[if ENDBLOCK]><![endif]-->
-
-
-                    <!--[if BLOCK]><![endif]--> <!--[if ENDBLOCK]><![endif]-->
+                    <textarea  class="form-control" placeholder="Provide an explanation.." name="points_assessment_1_no" id="" rows="3"></textarea>
 
                     <br> <br>
 
@@ -251,15 +262,15 @@
                         <div class="col-3 d-flex justify-content-between align-items-center">
                             <div class="form-check">
                                 <input class="form-check-input" value="Yes" type="radio"
-                                    wire:model.live="question_2_a">
+                                    name="points_assessment_2_random_assigment_a">
                             </div>
                             <div class="form-check">
                                 <input class="form-check-input" value="No" type="radio"
-                                    wire:model.live="question_2_a">
+                                    name="points_assessment_2_random_assigment_a">
                             </div>
                             <div class="form-check">
                                 <input class="form-check-input" value="N/A" type="radio"
-                                    wire:model.live="question_2_a">
+                                    name="points_assessment_2_random_assigment_a">
                             </div>
                         </div>
                         <!--[if BLOCK]><![endif]--> <!--[if ENDBLOCK]><![endif]-->
@@ -277,19 +288,19 @@
                         <div class="col-3 d-flex justify-content-between align-items-center">
                             <div class="form-check">
                                 <input class="form-check-input" value="Yes" type="radio"
-                                    wire:model.live="question_2_b">
+                                    name="points_assessment_2_random_assigment_b">
                             </div>
                             <div class="form-check">
                                 <input class="form-check-input" value="No" type="radio"
-                                    wire:model.live="question_2_b">
+                                    name="points_assessment_2_random_assigment_b">
                             </div>
 
                             <div class="form-check">
                                 <input class="form-check-input" value="N/A" type="radio"
-                                    wire:model.live="question_2_b">
+                                   name="points_assessment_2_random_assigment_b">
                             </div>
                         </div>
-                        <!--[if BLOCK]><![endif]--> <!--[if ENDBLOCK]><![endif]-->
+
                     </div>
 
                     <br> <br>
@@ -306,16 +317,16 @@
                         <div class="col-3 d-flex justify-content-between align-items-center">
                             <div class="form-check">
                                 <input class="form-check-input" value="Yes" type="radio"
-                                    wire:model.live="question_3_a">
+                                    name="points_assessment_3_a">
                             </div>
                             <div class="form-check">
                                 <input class="form-check-input" value="No" type="radio"
-                                    wire:model.live="question_3_a">
+                                    name="points_assessment_3_a">
                             </div>
 
                             <div class="form-check">
                                 <input class="form-check-input" value="N/A" type="radio"
-                                    wire:model.live="question_3_a">
+                                    name="points_assessment_3_a">
                             </div>
                         </div>
                         <!--[if BLOCK]><![endif]--> <!--[if ENDBLOCK]><![endif]-->
@@ -327,16 +338,16 @@
                         <div class="col-3 d-flex justify-content-between align-items-center">
                             <div class="form-check">
                                 <input class="form-check-input" value="Yes" type="radio"
-                                    wire:model.live="question_3_b">
+                                    name="points_assessment_3_b">
                             </div>
                             <div class="form-check">
                                 <input class="form-check-input" value="No" type="radio"
-                                    wire:model.live="question_3_b">
+                                    name="points_assessment_3_b">
                             </div>
 
                             <div class="form-check">
                                 <input class="form-check-input" value="N/A" type="radio"
-                                    wire:model.live="question_3_b">
+                                    name="points_assessment_3_a">
                             </div>
                         </div>
                         <!--[if BLOCK]><![endif]--> <!--[if ENDBLOCK]><![endif]-->
@@ -354,16 +365,16 @@
                         <div class="col-3 d-flex justify-content-between align-items-center">
                             <div class="form-check">
                                 <input class="form-check-input" value="Yes" type="radio"
-                                    wire:model.live="question_3_c">
+                                    name="points_assessment_3_c">
                             </div>
                             <div class="form-check">
                                 <input class="form-check-input" value="No" type="radio"
-                                    wire:model.live="question_3_c">
+                                    name="points_assessment_3_c">
                             </div>
 
                             <div class="form-check">
                                 <input class="form-check-input" value="N/A" type="radio"
-                                    wire:model.live="question_3_c">
+                                    name="points_assessment_3_c">
                             </div>
                         </div>
                         <!--[if BLOCK]><![endif]--> <!--[if ENDBLOCK]><![endif]-->
@@ -376,16 +387,16 @@
                         <div class="col-3 d-flex justify-content-between align-items-center">
                             <div class="form-check">
                                 <input class="form-check-input" value="Yes" type="radio"
-                                    wire:model.live="question_3_d">
+                                    name="points_assessment_3_d">
                             </div>
                             <div class="form-check">
                                 <input class="form-check-input" value="No" type="radio"
-                                    wire:model.live="question_3_d">
+                                    name="points_assessment_3_d">
                             </div>
 
                             <div class="form-check">
                                 <input class="form-check-input" value="N/A" type="radio"
-                                    wire:model.live="question_3_d">
+                                    name="points_assessment_3_d">
                             </div>
                         </div>
                         <!--[if BLOCK]><![endif]--> <!--[if ENDBLOCK]><![endif]-->
@@ -401,16 +412,16 @@
                         <div class="col-3 d-flex justify-content-between align-items-center">
                             <div class="form-check">
                                 <input class="form-check-input" value="Yes" type="radio"
-                                    wire:model.live="question_3_e">
+                                    name="points_assessment_3_e">
                             </div>
                             <div class="form-check">
                                 <input class="form-check-input" value="No" type="radio"
-                                    wire:model.live="question_3_e">
+                                    name="points_assessment_3_e">
                             </div>
 
                             <div class="form-check">
                                 <input class="form-check-input" value="N/A" type="radio"
-                                    wire:model.live="question_3_e">
+                                    name="points_assessment_3_e">
                             </div>
                         </div>
                         <!--[if BLOCK]><![endif]--> <!--[if ENDBLOCK]><![endif]-->
@@ -423,16 +434,16 @@
                         <div class="col-3 d-flex justify-content-between align-items-center">
                             <div class="form-check">
                                 <input class="form-check-input" value="Yes" type="radio"
-                                    wire:model.live="question_3_f">
+                                    name="points_assessment_3_f">
                             </div>
                             <div class="form-check">
                                 <input class="form-check-input" value="No" type="radio"
-                                    wire:model.live="question_3_f">
+                                    name="points_assessment_3_f">
                             </div>
 
                             <div class="form-check">
                                 <input class="form-check-input" value="N/A" type="radio"
-                                    wire:model.live="question_3_f">
+                                    name="points_assessment_3_f">
                             </div>
                         </div>
                         <!--[if BLOCK]><![endif]--> <!--[if ENDBLOCK]><![endif]-->
@@ -447,16 +458,16 @@
                         <div class="col-3 d-flex justify-content-between align-items-center">
                             <div class="form-check">
                                 <input class="form-check-input" value="Yes" type="radio"
-                                    wire:model.live="question_3_g">
+                                    name="points_assessment_3_g">
                             </div>
                             <div class="form-check">
                                 <input class="form-check-input" value="No" type="radio"
-                                    wire:model.live="question_3_g">
+                                    name="points_assessment_3_g">
                             </div>
 
                             <div class="form-check">
                                 <input class="form-check-input" value="N/A" type="radio"
-                                    wire:model.live="question_3_g">
+                                    name="points_assessment_3_g">
                             </div>
                         </div>
                         <!--[if BLOCK]><![endif]--> <!--[if ENDBLOCK]><![endif]-->
@@ -473,16 +484,16 @@
                         <div class="col-3 d-flex justify-content-between align-items-center">
                             <div class="form-check">
                                 <input class="form-check-input" value="Yes" type="radio"
-                                    wire:model.live="question_3_h">
+                                    name="points_assessment_3_h">
                             </div>
                             <div class="form-check">
                                 <input class="form-check-input" value="No" type="radio"
-                                    wire:model.live="question_3_h">
+                                    name="points_assessment_3_h">
                             </div>
 
                             <div class="form-check">
                                 <input class="form-check-input" value="N/A" type="radio"
-                                    wire:model.live="question_3_h">
+                                    name="points_assessment_3_h">
                             </div>
                         </div>
                         <!--[if BLOCK]><![endif]--> <!--[if ENDBLOCK]><![endif]-->
@@ -501,16 +512,16 @@
                         <div class="col-3 d-flex justify-content-between align-items-center">
                             <div class="form-check">
                                 <input class="form-check-input" value="Yes" type="radio"
-                                    wire:model.live="question_3_i">
+                                    name="points_assessment_3_i">
                             </div>
                             <div class="form-check">
                                 <input class="form-check-input" value="No" type="radio"
-                                    wire:model.live="question_3_i">
+                                    name="points_assessment_3_i">
                             </div>
 
                             <div class="form-check">
                                 <input class="form-check-input" value="N/A" type="radio"
-                                    wire:model.live="question_3_i">
+                                    name="points_assessment_3_i">
                             </div>
                         </div>
                         <!--[if BLOCK]><![endif]--> <!--[if ENDBLOCK]><![endif]-->
@@ -523,16 +534,16 @@
                         <div class="col-3 d-flex justify-content-between align-items-center">
                             <div class="form-check">
                                 <input class="form-check-input" value="Yes" type="radio"
-                                    wire:model.live="question_3_j">
+                                    name="points_assessment_3_j">
                             </div>
                             <div class="form-check">
                                 <input class="form-check-input" value="No" type="radio"
-                                    wire:model.live="question_3_j">
+                                    name="points_assessment_3_j">
                             </div>
 
                             <div class="form-check">
                                 <input class="form-check-input" value="N/A" type="radio"
-                                    wire:model.live="question_3_j">
+                                    name="points_assessment_3_j">
                             </div>
                         </div>
                         <!--[if BLOCK]><![endif]--> <!--[if ENDBLOCK]><![endif]-->
@@ -550,21 +561,21 @@
                         <div class="col-3 d-flex justify-content-between align-items-center">
                             <div class="form-check">
                                 <input class="form-check-input" value="Yes" type="radio"
-                                    wire:model.live="question_3_k">
+                                    name="points_assessment_3_k">
                             </div>
                             <div class="form-check">
                                 <input class="form-check-input" value="No" type="radio"
-                                    wire:model.live="question_3_k">
+                                    name="points_assessment_3_k">
                             </div>
 
                             <div class="form-check">
                                 <input class="form-check-input" value="N/A" type="radio"
-                                    wire:model.live="question_3_k">
+                                    name="points_assessment_3_k">
                             </div>
                         </div>
 
                     </div>
-                    <!--[if BLOCK]><![endif]--> <!--[if ENDBLOCK]><![endif]-->
+
 
                     <br> <br>
 
@@ -580,11 +591,11 @@
                         <div class="col-3 d-flex justify-content-between align-items-center">
                             <div class="form-check">
                                 <input class="form-check-input" value="Yes" type="radio"
-                                    wire:model.live="question_4">
+                                    name="points_assessment_4">
                             </div>
                             <div class="form-check">
                                 <input class="form-check-input" value="No" type="radio"
-                                    wire:model.live="question_4">
+                                    name="points_assessment_4">
                             </div>
                             <div class="form-check">
 
@@ -610,16 +621,16 @@
                         <div class="col-3 d-flex justify-content-between align-items-center">
                             <div class="form-check">
                                 <input class="form-check-input" value="Yes" type="radio"
-                                    wire:model.live="question_5">
+                                    name="points_assessment_5">
                             </div>
                             <div class="form-check">
                                 <input class="form-check-input" value="No" type="radio"
-                                    wire:model.live="question_5">
+                                    name="points_assessment_5">
                             </div>
 
                             <div class="form-check">
                                 <input class="form-check-input" value="N/A" type="radio"
-                                    wire:model.live="question_5">
+                                    name="points_assessment_5">
                             </div>
                         </div>
                     </div>
@@ -640,16 +651,16 @@
                         <div class="col-3 d-flex justify-content-between align-items-center">
                             <div class="form-check">
                                 <input class="form-check-input" value="Yes" type="radio"
-                                    wire:model.live="question_6">
+                                    name="points_assessment_6">
                             </div>
                             <div class="form-check">
                                 <input class="form-check-input" value="No" type="radio"
-                                    wire:model.live="question_6">
+                                    name="points_assessment_6">
                             </div>
 
                             <div class="form-check">
                                 <input class="form-check-input" value="N/A" type="radio"
-                                    wire:model.live="question_6">
+                                    name="points_assessment_6">
                             </div>
                         </div>
                     </div>
@@ -667,7 +678,7 @@
                             their refusal to participate, skip to question 8.</label>
                     </div>
 
-                    <div class="col-3 d-flex justify-content-between align-items-center">
+                    <div class="col-3 d-flex justify-content-between align-items-center" >
                         <div class="form-check">
                             <input wire:click='showSectionOf7' class="form-check-input" value="Yes"
                                 type="radio" wire:model.live="question_7">
@@ -679,13 +690,85 @@
 
                         <div class="form-check">
 
+
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="row">
+                            <div class="col-7">
+                                <label class="form-label-small">a. Are measures taken to protect participants
+                                    against
+                                    the
+                                    negative
+                                    consequences of their refusal to participate in the research or their
+                                    withdrawal?</label>
+                            </div>
+                            <div class="col-3 d-flex justify-content-between align-items-center ml-3">
+                                <div class="form-check">
+                                    <input class="form-check-input" value="Yes" type="radio" name="points_assessment_7_a">
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" value="No" type="radio" name="points_assessment_7_a">
+                                </div>
+
+                                <div class="form-check">
+                                    <input class="form-check-input" value="N/A" type="radio" name="points_assessment_7_a">
+                                </div>
+                            </div>
+                            <!--[if BLOCK]><![endif]--> <!--[if ENDBLOCK]><![endif]-->
+                        </div>
+                        <div class="row">
+                            <div class="col-7">
+                                <label class="form-label-small">b. If participation in the research will
+                                    provide
+                                    extra
+                                    points
+                                    as required by
+                                    the course; are different options offered to those who may choose not to
+                                    participate?</label>
+                            </div>
+                            <div class="col-3 d-flex justify-content-between align-items-center">
+                                <div class="form-check">
+                                    <input class="form-check-input" value="Yes" type="radio" name="points_assessment_7_b">
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" value="No" type="radio" name="points_assessment_7_b">
+                                </div>
+
+                                <div class="form-check">
+                                    <input class="form-check-input" value="N/A" type="radio" name="points_assessment_7_b">
+                                </div>
+                            </div>
+                            <!--[if BLOCK]><![endif]--> <!--[if ENDBLOCK]><![endif]-->
+                        </div>
+
+                        <div class="row">
+                            <div class="col-7">
+                                <label class="form-label-small">c. Are the economic or other incentives (extra
+                                    points
+                                    for
+                                    the course) to be
+                                    provided to the participants for participation in the research in amounts
+                                    that make participation compulsory?</label>
+                            </div>
+                            <div class="col-3 d-flex justify-content-between align-items-center">
+                                <div class="form-check">
+                                    <input class="form-check-input" value="Yes" type="radio" name="points_assessment_7_c">
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" value="No" type="radio" name="points_assessment_7_c">
+                                </div>
+
+                                <div class="form-check">
+                                    <input class="form-check-input" value="N/A" type="radio" name="points_assessment_7_c">
+                                </div>
+                            </div>
+                            <!--[if BLOCK]><![endif]--> <!--[if ENDBLOCK]><![endif]-->
                         </div>
                     </div>
                 </div>
 
-                <!--[if BLOCK]><![endif]--> <!--[if ENDBLOCK]><![endif]-->
 
-                <!--[if BLOCK]><![endif]--> <!--[if ENDBLOCK]><![endif]-->
 
                 <br> <br>
 
@@ -697,21 +780,170 @@
                     </div>
                     <div class="col-3 d-flex justify-content-between align-items-center">
                         <div class="form-check">
-                            <input wire:click="showSectionOf8" class="form-check-input" value="Yes"
-                                type="radio" wire:model.live="question_8">
+                            <input name="points_assessment_8" class="form-check-input" value="Yes"
+                                type="radio" >
                         </div>
                         <div class="form-check">
-                            <input wire:click="showSectionOf8" class="form-check-input" value="No"
-                                id="no-8" type="radio" wire:model.live="question_8">
+                            <input name="points_assessment_8" class="form-check-input" value="No"
+                                id="no-8" type="radio" >
                         </div>
 
                         <div class="form-check">
 
                         </div>
+
 
                     </div>
-                    <!--[if BLOCK]><![endif]--> <!--[if ENDBLOCK]><![endif]-->
+                    <div class="row">
+                        <div class="row">
+                            <div class="col-7">
+                                <label class="form-label-small">a. Will deception be used in a situation where
+                                    it
+                                    can
+                                    be
+                                    predicted to cause
+                                    physical pain or severe emotional distress to the participant?</label>
+                            </div>
+                            <div class="col-3 d-flex justify-content-between align-items-center">
+                                <div class="form-check">
+                                    <input class="form-check-input" value="Yes" type="radio" name="points_assessment_8_a">
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" value="No" type="radio" name="points_assessment_8_a">
+                                </div>
+
+                                <div class="form-check">
+
+                                </div>
+                            </div>
+                            <!--[if BLOCK]><![endif]--> <!--[if ENDBLOCK]><![endif]-->
+                        </div>
+                        <div class="row">
+                            <div class="col-7">
+                                <label class="form-label-small">b. Is it stated that any deception necessary
+                                    for
+                                    the
+                                    healthy
+                                    conduct of
+                                    the research will be disclosed to the participants at the end of the
+                                    participation and as early as possible (debriefing)?</label>
+                            </div>
+                            <div class="col-3 d-flex justify-content-between align-items-center">
+                                <div class="form-check">
+                                    <input class="form-check-input" value="Yes" type="radio" name="points_assessment_8_b">
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" value="No" type="radio" name="points_assessment_8_b">
+                                </div>
+
+                                <div class="form-check">
+
+                                </div>
+                            </div>
+                            <!--[if BLOCK]><![endif]--> <!--[if ENDBLOCK]><![endif]-->
+                        </div>
+
+                        <div class="row">
+                            <div class="col-7">
+                                <label class="form-label-small">c. Has a debriefing form been submitted in the
+                                    case
+                                    of
+                                    deception
+                                    in the
+                                    research?</label>
+                            </div>
+                            <div class="col-3 d-flex justify-content-between align-items-center ">
+                                <div class="form-check ">
+                                    <input class="form-check-input" value="Yes" type="radio" name="points_assessment_8_c">
+                                </div>
+                                <div class="form-check ">
+                                    <input class="form-check-input" value="No" type="radio" name="points_assessment_8_c">
+                                </div>
+
+                                <div class="form-check">
+
+                                </div>
+                            </div>
+                            <!--[if BLOCK]><![endif]--> <!--[if ENDBLOCK]><![endif]-->
+                        </div>
+
+                        <div class="row">
+                            <div class="col-7">
+                                <label class="form-label-small">d. Does the Debriefing Form contain the
+                                    following
+                                    items
+                                    (i-iii)?</label>
+                            </div>
+
+                            <br> <br>
+                            <div class="row">
+                                <div class="col-7 ml-3">
+                                    <label class="form-label-small">i. The real purpose of the research</label>
+                                </div>
+                                <div class="col-3 d-flex justify-content-between align-items-center">
+                                    <div class="form-check">
+                                        <input class="form-check-input" value="Yes" type="radio" name="points_assessment_8_d_i">
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" value="No" type="radio" name="points_assessment_8_d_i">
+                                    </div>
+
+                                    <div class="form-check ml-3" >
+                                        <input class="form-check-input" value="N/A" type="radio" name="points_assessment_8_d_i">
+                                    </div>
+                                </div>
+                                <!--[if BLOCK]><![endif]--> <!--[if ENDBLOCK]><![endif]-->
+
+
+                            <div class="row">
+                                <div class="col-7 ml-3">
+                                    <label class="form-label-small">ii. Reason for deception</label>
+                                </div>
+                                <div class="col-3 d-flex justify-content-between align-items-center">
+                                    <div class="form-check">
+                                        <input class="form-check-input" value="Yes" type="radio" name="points_assessment_8_d_ii">
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" value="No" type="radio" name="points_assessment_8_d_ii">
+                                    </div>
+
+                                    <div class="form-check">
+                                        <input class="form-check-input" value="N/A" type="radio" name="points_assessment_8_d_ii">
+                                    </div>
+                                </div>
+                                <!--[if BLOCK]><![endif]--> <!--[if ENDBLOCK]><![endif]-->
+                            </div>
+
+                            <br><br>
+
+                            <div class="row">
+                                <div class="col-7 ml-3">
+                                    <label class="form-label-small">iii. The participants potential questions
+                                        or
+                                        ideas
+                                        can
+                                        be
+                                        forwarded to
+                                        the researcher or FIU Ethical Committee.</label>
+                                </div>
+                                <div class="col-3 d-flex justify-content-between align-items-center">
+                                    <div class="form-check">
+                                        <input class="form-check-input" value="Yes" type="radio" name="points_assessment_8_d_iii">
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" value="No" type="radio" name="points_assessment_8_d_iii">
+                                    </div>
+
+                                    <div class="form-check">
+                                        <input class="form-check-input" value="N/A" type="radio" name="points_assessment_8_d_iii">
+                                    </div>
+                                </div>
+                                <!--[if BLOCK]><![endif]--> <!--[if ENDBLOCK]><![endif]-->
+                            </div>
+                        </div>
+                    </div>
                 </div>
+            </div>
                 <!--[if BLOCK]><![endif]--> <!--[if ENDBLOCK]><![endif]-->
 
                 <br> <br>
@@ -730,16 +962,16 @@
                         <div class="col-3 d-flex justify-content-between align-items-center">
                             <div class="form-check">
                                 <input class="form-check-input" value="Yes" type="radio"
-                                    wire:model.live="question_9">
+                                    name="points_assessment_9">
                             </div>
                             <div class="form-check">
                                 <input class="form-check-input" value="No" type="radio"
-                                    wire:model.live="question_9">
+                                    name="points_assessment_9">
                             </div>
 
                             <div class="form-check">
                                 <input class="form-check-input" value="N/A" type="radio"
-                                    wire:model.live="question_9">
+                                    name="points_assessment_9">
                             </div>
                         </div>
                     </div>
@@ -759,16 +991,16 @@
                         <div class="col-3 d-flex justify-content-between align-items-center">
                             <div class="form-check">
                                 <input class="form-check-input" value="Yes" type="radio"
-                                    wire:model.live="question_10">
+                                    name="points_assessment_10">
                             </div>
                             <div class="form-check">
                                 <input class="form-check-input" value="No" type="radio"
-                                    wire:model.live="question_10">
+                                    name="points_assessment_10">
                             </div>
 
                             <div class="form-check">
                                 <input class="form-check-input" value="N/A" type="radio"
-                                    wire:model.live="question_10">
+                                    name="points_assessment_10">
                             </div>
                         </div>
                     </div>
@@ -785,11 +1017,11 @@
                         <div class="col-3 d-flex justify-content-between align-items-center">
                             <div class="form-check">
                                 <input class="form-check-input" value="Yes" type="radio"
-                                    wire:model.live="question_11">
+                                    name="points_assessment_11">
                             </div>
                             <div class="form-check">
                                 <input class="form-check-input" value="No" type="radio"
-                                    wire:model.live="question_11">
+                                    name="points_assessment_11">
                             </div>
                             <div class="form-check">
 

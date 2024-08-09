@@ -23,6 +23,8 @@ class AplicationFormController extends Controller
     public function store(Request $request){
         $form = new ApplcationForm();
         $form->create($request->all());
+
+        return redirect()->back();
     }
 
     public function test(){

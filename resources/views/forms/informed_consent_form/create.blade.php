@@ -92,13 +92,13 @@
 
                 <div class="d-flex flex-wrap align-items-center">
                     <p class="form-label consent-text">This research project is being conducted by </p>
-                    <input name="researcher_name" value="" class="form-control"
+                    <input  value="" class="form-control"
                         type="text" readonly>
                 </div>
 
                 <div class="d-flex flex-wrap align-items-center">
                     <p class="form-label consent-text">of</p>
-                    <input name="resarcher_institute" value=""
+                    <input  value=""
                         class="form-control" type="text" readonly>
                 </div>
 
@@ -114,7 +114,7 @@
                             style="font-style: italic; text-decoration:underline">18
                             years or older</span>
                         The proposed study is entitled</p>
-                    <input name="resarcher_advisor_title" value="" class="form-control"
+                    <input  value="" class="form-control"
                         type="text" readonly>
                 </div>
 
@@ -127,13 +127,13 @@
 
                 <div class="row consent-row justify-content-md-center">
                     <div class="col">
-                        <input name='start_date' class="form-control" type="date">
+                        <input name='start_time' class="form-control" type="date">
                         <!--[if BLOCK]><![endif]--> <!--[if ENDBLOCK]><![endif]-->
                     </div>
 
                     <p class="col-md-auto form-label consent-text"> and</p>
                     <div class="col">
-                        <input name='end_date' class=" col form-control" type="date">
+                        <input name='end_time' class=" col form-control" type="date">
                         <!--[if BLOCK]><![endif]--> <!--[if ENDBLOCK]><![endif]-->
                     </div>
 
@@ -143,8 +143,8 @@
                     <p class="form-label consent-text"> You are expected to participate in this survey study
                         only
                         once. The survey will be</p>
-                    <div class="col"> <select name='type' style="width: 25%;"
-                            class="form-select-lg" name="" id="">
+                    <div class="col"> <select  style="width: 25%;"
+                            class="form-select-lg" id="">
                             <option hidden>Select</option>
                             <option value="Online">Online</option>
                             <option value="Face to face">Face to face</option>
@@ -164,7 +164,7 @@
                         accept
                         and apply the basic principles</p>
 
-                    <textarea name="survey_is_anonyms" style="margin: 5px 0" class="form-control" name="" id=""
+                    <textarea name="survey_is_anonyms" style="margin: 5px 0" class="form-control" id=""
                         rows="3"></textarea>
 
                     <!--[if BLOCK]><![endif]--> <!--[if ENDBLOCK]><![endif]-->
@@ -205,10 +205,10 @@
 
                 <div class="row consent-row justify-content-md-center">
 
-                    <input name="resarcher_email" value=""
+                    <input value=""
                         class="col form-control" type="email" placeholder="email:" readonly>
                     <p class="col-md-auto form-label consent-text"></p>
-                    <input name="resarcher_phone" value=""
+                    <input value=""
                         class="col form-control" type="phone" placeholder="phone:" readonly>
 
                 </div>

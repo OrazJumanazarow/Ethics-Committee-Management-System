@@ -202,32 +202,14 @@
                     </div>
 
                 </div>
-            </form>
-
-            <div class="button d-flex flex-row align-items-center justify-content-end">
+                <div class="button d-flex flex-row align-items-center justify-content-end">
                 <button type="submit" class="btn submit btn-primary">Submit</button>
             </div>
-        </div>
-        <div id="myModal" class="modal"
-    tabindex="-1" role="dialog">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-            </div>
-            <div class="modal-body">
-                <p class="">
-                    <!--[if BLOCK]><![endif]--> <!--[if ENDBLOCK]><![endif]-->
+            </form>
 
-                    <!--[if BLOCK]><![endif]--> <!--[if ENDBLOCK]><![endif]-->
-                </p>
-            </div>
 
-            <div class="modal-footer">
-                <a type="button" class="btn btn-secondary">Close</a>
-            </div>
         </div>
-    </div>
-</div>
+
 </div>
 
 

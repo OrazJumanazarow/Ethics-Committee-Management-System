@@ -71,20 +71,6 @@ class ApplcationForm extends Model
         'confirmation_supervisor_name',
         'confirmation_supervisor_date',
         'confirmation_researcher_name',
-        'confirmation_resercher_date',
-        
-
-        /*'brief_describe',
-        'explain_data_c_plan',
-        'expected_result_study',
-        'study_involve_items',
-        'study_involve_items_yes',
-        'will_partisipants_be_kept',
-        'will_partisipants_be_kept_yes',
-        'indicate_the_potential',
-        'previous_research_project',
-        'previous_research_project_yes',
-        'researcher_name'
-        */
+        'confirmation_resercher_date'
     ];
 }
