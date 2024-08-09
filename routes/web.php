@@ -1,6 +1,12 @@
 <?php
 
+use App\Http\Controllers\Forms\AplicationFormController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\PermissionsController;
+use App\Http\Controllers\Forms\InformedConsntFormController;
+use App\Http\Controllers\Forms\ProjectInformationController;
+use App\Http\Controllers\Forms\ApplicationChecklistController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -8,12 +14,22 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard')->middleware('auth');
 
-Auth::routes();
+Route::group(['/prefix'=>'users','as'=>'users.'],function(){
+    Route::resource('permissions',PermissionsController::class);
+});
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('application_form/create', [AplicationFormController::class,'create']);
 
-Auth::routes();
+Route::post('application_form/store', [AplicationFormController::class,'store'])->name('application_form_store');
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('application_form/test',[AplicationFormController::class,'test']);
+
+Route::get('informed_form/create',[InformedConsntFormController::class, 'create']);
+
+Route::get('project_information_form/create',[ProjectInformationController::class, 'create']);
+
+Route::get('application_cheklist_form/create',[ApplicationChecklistController::class, 'create']);
+
+
