@@ -119,7 +119,7 @@
                 <div class="accordion-item">
                     <div class="accordion-header" id="flush-headingFour">
 
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        <button style="" class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                             data-bs-target="#flush-collapseFour" aria-expanded="false"
                             aria-controls="flush-collapseFour">
                             <h3>ETHICS COMMITTEE APPLICATION CHECKLIST</h3>

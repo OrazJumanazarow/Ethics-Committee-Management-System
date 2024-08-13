@@ -133,7 +133,7 @@
 
                 <!-- 5 -->
                 <!--[if BLOCK]><![endif]-->
-                <div class=" row">
+                <div class=" row" id="close5" style="display: block">
                     <label class="form-label">
                         5. Advisor’s/Supervising Faculty Member’s <i>(Students conducting research
                             must
@@ -165,7 +165,6 @@
                     <!--[if BLOCK]><![endif]--> <!--[if ENDBLOCK]><![endif]-->
                 </div>
 
-
                 <div class="col-md">
                     <label class="form-label-small headers">Phone:</label>
                     <input name="resarcher_advisor_phone" type="text" class="form-control"
@@ -184,7 +183,6 @@
         </div>
 
 
-        <!--[if ENDBLOCK]><![endif]-->
         <!-- 6 -->
 
 
@@ -622,15 +620,14 @@
                 document.querySelectorAll('input[name="status_of_application_new_or_revised_20"]').forEach((checkbox) => {
                     checkbox.addEventListener('change', function() {
 
-                        console.log('20 metod',this.value,this.checked)
-                        if (this.value === 'otherMethod20Value' && this.checked)  {
+                        console.log('20 metod', this.value, this.checked)
+                        if (this.value === 'otherMethod20Value' && this.checked) {
                             otherMethodText.style.display = 'block';
                         } else {
                             otherMethodText.style.display = 'none';
                         }
                     });
                 });
-
             </script>
 
             <div class="mb-3">
@@ -813,10 +810,9 @@
 
         function addContaner2() {
             addContainer2Index++;
-            console.log("-->>>", addContainer2Index);
             document.getElementById("inputContainer2").innerHTML += `<div class="row mb-2" id="deneme_${addContainer2Index}">
                          <div class="col">
-                           <input name=""  type="text" class="form-control" placeholder="" required="">
+                           <input name="organization_add[]" type="text" class="form-control" placeholder="" required="">
                         </div>
                         <div class="col">
                             <button class="btn btn-danger removeInput" onclick="removeContainer1('deneme_${addContainer2Index}')">Remove</button>
@@ -839,22 +835,29 @@
         function addContainer1() {
             addContainer1Index++;
             console.log(">>>>>>", addContainer1Index);
-            document.getElementById("inputContainer1").innerHTML += `<div class="row mb-2" id="test_${addContainer1Index}">
-                         <div class="col">
-                          <div class="row">
-                              <div class="col">
-                                <input name="resarcher_others_add_name"  type="text" class="form-control" placeholder="Name:" required="">
-                             </div>
-                            <div class="col">
-                                <input name="resarcher_others_add_name"  type="text" class="form-control" placeholder="Institute:" required="">
-                            </div>
-                          </div>
-                        </div>
-                        <div class="col">
-                            <button class="btn btn-danger removeInput" onclick="removeContainer1('test_${addContainer1Index}')">Remove</button>
-                        </div>
-                        </div>`;
+
+            const newContainer = document.createElement('div');
+            newContainer.classList.add('row', 'mb-2');
+            newContainer.id = `test_${addContainer1Index}`;
+
+            newContainer.innerHTML = `
+        <div class="col">
+            <div class="row">
+                <div class="col">
+                    <input name="resarcher_others_add_name_${addContainer1Index}" type="text" class="form-control" placeholder="Name:" required="">
+                </div>
+                <div class="col">
+                    <input name="resarcher_others_add_institute_${addContainer1Index}" type="text" class="form-control" placeholder="Institute:" required="">
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <button class="btn btn-danger removeInput" onclick="removeContainer1('test_${addContainer1Index}')">Remove</button>
+        </div>`;
+
+            document.getElementById("inputContainer1").appendChild(newContainer);
         }
+
 
         function removeContainer1(id) {
             console.log("silen id", id);
@@ -907,16 +910,16 @@
 
         // form 17 other
         const otherText17 = document.getElementById('otherText17');
-                document.querySelectorAll('input[name="status_of_application_new_or_revised_17"]').forEach((checkbox) => {
-                    checkbox.addEventListener('change', function() {
-                        console.log(this.checked)
-                        if (this.value === 'other17' && this.checked)  {
-                            otherText17.style.display = 'block';
-                        } else {
-                            otherText17.style.display = 'none';
-                        }
-                    });
-                });
+        document.querySelectorAll('input[name="status_of_application_new_or_revised_17"]').forEach((checkbox) => {
+            checkbox.addEventListener('change', function() {
+                console.log(this.checked)
+                if (this.value === 'other17' && this.checked) {
+                    otherText17.style.display = 'block';
+                } else {
+                    otherText17.style.display = 'none';
+                }
+            });
+        });
 
         // form 20
 
@@ -961,6 +964,18 @@
                     extensionOfAPreviousStudy.style.display = 'block';
                 } else {
                     extensionOfAPreviousStudy.style.display = 'none';
+                }
+            });
+        });
+
+        // form 2 close 5 Academic Staff Study
+        const close5 = document.getElementById('close5');
+        document.querySelectorAll('input[name="type_of_study"]').forEach((checkbox) => {
+            checkbox.addEventListener('change', function() {
+                if (this.value === 'academicStaffStudy') {
+                    close5.style.display = 'none';
+                } else {
+                    close5.style.display = 'block';
                 }
             });
         });

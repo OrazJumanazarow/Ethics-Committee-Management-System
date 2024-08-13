@@ -20,8 +20,10 @@ class AplicationFormController extends Controller
         return view('forms.application_form.create');
     }
 
+
     public function store(Request $request){
         $form = new ApplcationForm();
+        dd($request->all());
         $form->create($request->all());
 
         return redirect()->back();
