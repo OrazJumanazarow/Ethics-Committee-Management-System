@@ -14,7 +14,7 @@
     <section class="content ml-4">
         <div class="container-fluid">
 
-            <form action="{{ route('application_form_store') }}" class="main" method="POST">
+            <form   class="main" id="dynamicForm">
                 <div class="d-flex justify-content-center">
                     <img style="width: 15%" src="img\logo6.png" alt="">
                 </div>
@@ -810,7 +810,8 @@
 
         function addContaner2() {
             addContainer2Index++;
-            document.getElementById("inputContainer2").innerHTML += `<div class="row mb-2" id="deneme_${addContainer2Index}">
+
+           /* document.getElementById("inputContainer2").innerHTML += `<div class="row mb-2" id="deneme_${addContainer2Index}">
                          <div class="col">
                            <input name="organization_add[]" type="text" class="form-control" placeholder="" required="">
                         </div>
@@ -818,6 +819,22 @@
                             <button class="btn btn-danger removeInput" onclick="removeContainer1('deneme_${addContainer2Index}')">Remove</button>
                         </div>
                         </div>`;
+*/
+
+            const container = document.createElement('div');
+            container.className = 'row mb-2';
+            container.id = `deneme_${addContainer2Index}`;
+
+            container.innerHTML = `
+                <div class="col">
+                    <input name="organization_add[]" type="text" class="form-control" placeholder="Enter value" required>
+                </div>
+                <div class="col">
+                    <button type="button" class="btn btn-danger removeInput" onclick="removeContainer2('deneme_${addContainer2Index}')">Remove</button>
+                </div>
+            `;
+
+            document.getElementById('inputContainer2').appendChild(container);
         }
 
         function removeContainer2(id) {
@@ -979,6 +996,42 @@
                 }
             });
         });
+
+
+// submit form
+document.getElementById('dynamicForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent the default form submission
+
+            const form = event.target;
+            const formData = new FormData(form);
+
+for (const [name, value] of formData.entries()) {
+                console.log(name, value);
+}
+return
+
+            fetch("{{ route('application_form_store') }}", {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'X-Requested-With': 'XMLHttpRequest',
+                    'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content')
+                }
+            })
+            .then(response => response.json())
+            .then(data => {
+                // Handle success
+                console.log(data);
+                alert('Form submitted successfully!');
+            })
+            .catch(error => {
+                // Handle error
+                console.error('Error:', error);
+                alert('An error occurred!');
+            });
+        });
+
+
     </script>
 
 @stop

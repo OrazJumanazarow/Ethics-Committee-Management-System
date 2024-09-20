@@ -22,11 +22,12 @@ class AplicationFormController extends Controller
 
 
     public function store(Request $request){
+
+        return response()->json($request->all());
         $form = new ApplcationForm();
-        dd($request->all());
         $form->create($request->all());
 
-        return redirect()->back();
+        //return redirect()->back();
     }
 
     public function test(){

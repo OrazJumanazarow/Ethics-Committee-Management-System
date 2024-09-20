@@ -194,7 +194,7 @@
                     </div>
 
                 </div>
-                <div>
+                <div id="file5" style="display: none">
                     <input style="width: 50%" class="form-control" name="informed_consent_file" type="file"
                         accept=".doc">
                 </div>
@@ -242,8 +242,8 @@
                         </div>
                     </div>
                 </div>
-                <textarea class="form-control" placeholder="Provide an explanation.." name="points_assessment_1_no" id=""
-                    rows="3"></textarea>
+                <textarea class="form-control" placeholder="Provide an explanation.." name="points_assessment_1_no" id="if1_no"
+                    rows="3" style="display: none"></textarea>
 
                 <br> <br>
 
@@ -641,12 +641,10 @@
 
                     <div class="col-3 d-flex justify-content-between align-items-center">
                         <div class="form-check">
-                            <input wire:click='showSectionOf7' class="form-check-input" value="Yes" type="radio"
-                                wire:model.live="question_7">
+                            <input name="points_assessment_7" class="form-check-input" value="Yes" type="radio">
                         </div>
                         <div class="form-check">
-                            <input wire:click='showSectionOf7' class="form-check-input" value="No" type="radio"
-                                wire:model.live="question_7">
+                            <input name="points_assessment_7" class="form-check-input" value="No" type="radio">
                         </div>
 
                         <div class="form-check">
@@ -654,7 +652,7 @@
 
                         </div>
                     </div>
-                    <div class="row">
+                    <div class="row" id="if7_yes" style="display: none">
                         <div class="row">
                             <div class="col-7">
                                 <label class="form-label-small">a. Are measures taken to protect participants
@@ -738,8 +736,6 @@
                     </div>
                 </div>
 
-
-
                 <br> <br>
 
                 <div class="row">
@@ -763,7 +759,7 @@
 
 
                     </div>
-                    <div class="row">
+                    <div class="row" id="if8_yes" style="display: none">
                         <div class="row">
                             <div class="col-7">
                                 <label class="form-label-small">a. Will deception be used in a situation where
@@ -928,7 +924,20 @@
                         </div>
                     </div>
                 </div>
-                <!--[if BLOCK]><![endif]--> <!--[if ENDBLOCK]><![endif]-->
+
+                <script>
+                    const if8_yes = document.getElementById('if8_yes');
+                    document.querySelectorAll('input[name="points_assessment_8"]').forEach((radio) => {
+                        radio.addEventListener('change', function() {
+                            console.log(this.value)
+                            if (this.value === 'Yes') {
+                                if8_yes.style.display = 'block';
+                            } else {
+                                if8_yes.style.display = 'none';
+                            }
+                        });
+                    });
+                </script>
 
                 <br> <br>
 
@@ -1172,32 +1181,70 @@
         });
 
 
-                    //file 3
-                    const file4 = document.getElementById('file4');
-                    document.querySelectorAll('input[name="permission"]').forEach((radio) => {
+        //file 3
+        const file4 = document.getElementById('file4');
+        document.querySelectorAll('input[name="permission"]').forEach((radio) => {
+            radio.addEventListener('change', function() {
+                console.log(this.value)
+                if (this.value === 'Yes') {
+                    file4.style.display = 'block';
+                } else {
+                    file4.style.display = 'none';
+                }
+            });
+        });
+
+        //file 3 Text
+        const file4Text = document.getElementById('file4Text');
+        document.querySelectorAll('input[name="permission"]').forEach((radio) => {
+            radio.addEventListener('change', function() {
+                console.log(this.value)
+                if (this.value === 'No') {
+                    file4Text.style.display = 'block';
+                } else {
+                    file4Text.style.display = 'none';
+                }
+            });
+        });
+
+        //file 4
+        const file5 = document.getElementById('file5');
+        document.querySelectorAll('input[name="informed_consent"]').forEach((radio) => {
+            radio.addEventListener('change', function() {
+                console.log(this.value)
+                if (this.value === 'Yes') {
+                    file5.style.display = 'block';
+                } else {
+                    file5.style.display = 'none';
+                }
+            });
+        });
+
+        //question 1 text if no
+        const if1_no = document.getElementById('if1_no');
+                    document.querySelectorAll('input[name="points_assessment_1"]').forEach((radio) => {
                         radio.addEventListener('change', function() {
                             console.log(this.value)
-                            if (this.value === 'Yes') {
-                                file4.style.display = 'block';
+                            if (this.value === 'No') {
+                                if1_no.style.display = 'block';
                             } else {
-                                file4.style.display = 'none';
+                                if1_no.style.display = 'none';
                             }
                         });
                     });
 
-                    //file 3 Text
-                    const file4Text = document.getElementById('file4Text');
-                    document.querySelectorAll('input[name="permission"]').forEach((radio) => {
+                    //question 7 letter chose if yes
+                    const if7_yes = document.getElementById('if7_yes');
+                    document.querySelectorAll('input[name="points_assessment_7"]').forEach((radio) => {
                         radio.addEventListener('change', function() {
                             console.log(this.value)
-                            if (this.value === 'No') {
-                                file4Text.style.display = 'block';
+                            if (this.value === 'Yes') {
+                                if7_yes.style.display = 'block';
                             } else {
-                                file4Text.style.display = 'none';
+                                if7_yes.style.display = 'none';
                             }
                         });
                     });
-                
     </script>
 
 @stop
