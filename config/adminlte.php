@@ -63,7 +63,7 @@ return [
     |
     */
 
-    'logo' => '<b>ECMS</b> app',
+    'logo' => '<b>FIU</b> ECMS',
     'logo_img' => 'vendor/adminlte/dist/img/logo.png',
     'logo_img_class' => 'brand-image img-circle elevation-3',
     'logo_img_xl' => null,
@@ -172,8 +172,8 @@ return [
     */
 
     'classes_auth_card' => 'bg-gradient-dark',
-    'classes_auth_header' => 'bg-gradient-dark',
-    'classes_auth_body' => 'bg-gradient-dark',
+    'classes_auth_header' => 'bg-gradient-yellow',
+    'classes_auth_body' => 'bg-gradient-yellow',
     'classes_auth_footer' => 'text-center',
     'classes_auth_icon' => 'fa-fw text-light',
     'classes_auth_btn' => 'btn-flat btn-light',
@@ -309,7 +309,7 @@ return [
 
         [
         'text'=>'Dashboard',
-        'url'=>'home',
+        'url'=>'dashboard',
         'icon'=>'fas fa-fw fa-home'
         ],
         [
@@ -318,22 +318,22 @@ return [
             'submenu' => [
                     [
                     'text'=>'APPLICATION FORM',
-                    'url'=>'app_form',
+                    'url'=>'application_form/create',
                     'icon'=>'fas fa-fw fa-file'
                     ],
                     [
                     'text'=>'INFORMED CONSENT FORM',
-                    'url'=>'inf_con_form',
+                    'url'=>'informed_form/create',
                     'icon'=>'fas fa-fw fa-file'
                     ],
                     [
                     'text'=>'PROJECT INFORMATION FORM',
-                    'url'=>'pr_inf_form',
+                    'url'=>'project_information_form/create',
                     'icon'=>'fas fa-fw fa-file'
                     ],
                     [
                     'text'=>'APPLICATION CHECKLIST',
-                    'url'=>'app_check_form',
+                    'url'=>'application_cheklist_form/create',
                     'icon'=>'fas fa-fw fa-file'
                     ],
             ]
